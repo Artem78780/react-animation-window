@@ -1,19 +1,7 @@
-import React, { useState } from 'react';
-import './index.scss';
 
-function App() {
-
-  const [visible, setVisible] = useState(false)
-
-  return (
-    <div className="App">
-      <button
-        className="open-modal-btn"
-        onClick={() => setVisible(true)}
-      >✨
-        Відкрити вікно
-      </button>
-      <div className={`overlay animated ${visible ? 'show' : ''}`}>
+function ModalWindow({visible, setVisible}){
+    return(
+        <div className={`overlay animated ${visible ? 'show' : ''}`}>
         <div className="modal">
           <svg
             height="200"
@@ -27,8 +15,7 @@ function App() {
           <img src="https://media2.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" />
         </div>
       </div>
-    </div>
-  );
+    )
 }
 
-export default App;
+export default ModalWindow;
